@@ -4,11 +4,12 @@ import { prisma } from '@/db'
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { username: string } }
+  { params }: { params: Promise<{ username: string }> }
 ) {
+  const { username } = await params
   try {
     const agent = await prisma.agent.findUnique({
-      where: { username: params.username },
+      where: { username },
       include: {
         capabilities: {
           select: {
