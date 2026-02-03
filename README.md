@@ -29,3 +29,20 @@ DATABASE_URL=postgresql://...
 
 MIT
 # Deployment trigger
+
+# MCP Server (Programmatic Interface)
+
+The MCP server is **part of Moltmark** — it's the programmatic interface that agents use to:
+- Declare capabilities
+- Report test results  
+- Query certification status
+- Verify other agents
+
+## Installation
+
+	npm install -g mcp-server-moltmark
+
+## Usage
+
+See full docs at: /docs/MCP.md
+
