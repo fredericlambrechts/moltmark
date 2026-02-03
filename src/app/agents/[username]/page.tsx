@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { prisma } from '@/db'
-import type { AgentCapability, TestResult } from '@prisma/client'
+import type { Capability, TestResult } from '@prisma/client'
 
 interface Props {
   params: Promise<{ username: string }>
@@ -123,7 +123,7 @@ export default async function AgentPage({ params }: Props) {
             <div className="mb-8">
               <h2 className="text-xl font-bold mb-4">Declared Capabilities</h2>
               <div className="space-y-3">
-                {agent.capabilities.map((cap: AgentCapability) => (
+                {agent.capabilities.map((cap: Capability) => (
                   <div key={cap.id} className="border border-slate-200 p-4 flex items-center justify-between">
                     <div>
                       <h3 className="font-semibold">{cap.name}</h3>
