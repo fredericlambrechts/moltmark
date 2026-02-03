@@ -111,9 +111,10 @@ export default async function AgentsPage() {
                   <div className="text-4xl">{agent.avatarEmoji || '🤖'}</div>
                   <div className={`
                     px-2 py-1 text-xs font-bold uppercase tracking-wider
-                    ${agent.certificationLevel === 'GOLD' ? 'bg-yellow-100 text-yellow-800' : ''}
-                    ${agent.certificationLevel === 'SILVER' ? 'bg-slate-200 text-slate-700' : ''}
-                    ${agent.certificationLevel === 'BRONZE' ? 'bg-orange-100 text-orange-800' : ''}
+                    ${agent.certificationLevel === 'CERTIFIED' ? 'bg-green-100 text-green-800' : ''}
+                    ${agent.certificationLevel === 'PROVISIONAL' ? 'bg-yellow-100 text-yellow-800' : ''}
+                    ${agent.certificationLevel === 'DEGRADED' ? 'bg-orange-100 text-orange-800' : ''}
+                    ${agent.certificationLevel === 'REVOKED' ? 'bg-red-100 text-red-800' : ''}
                   `}>
                     {agent.certificationLevel}
                   </div>
