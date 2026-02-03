@@ -161,7 +161,7 @@ export default async function AgentPage({ params }: Props) {
                 {agent.testResults.map((test: TestResult) => (
                   <div key={test.id} className="p-4 flex items-center justify-between">
                     <div>
-                      <div className="font-medium">{test.testName}</div>
+                      <div className="font-medium">{test.testType} Test</div>
                       <div className="text-sm text-slate-500">
                         {new Date(test.createdAt).toLocaleString()}
                       </div>
