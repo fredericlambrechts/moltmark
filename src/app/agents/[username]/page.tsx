@@ -135,17 +135,17 @@ export default async function AgentPage({ params }: Props) {
                     <div className="text-right">
                       <div className={`
                         text-sm font-bold uppercase
-                        ${cap.testStatus === 'PASSING' ? 'text-green-600' : ''}
-                        ${cap.testStatus === 'FAILING' ? 'text-red-600' : ''}
-                        ${cap.testStatus === 'UNTESTED' ? 'text-slate-400' : ''}
+                        ${cap.status === 'VERIFIED' ? 'text-green-600' : ''}
+                        ${cap.status === 'FAILED' ? 'text-red-600' : ''}
+                        ${cap.status === 'DECLARED' ? 'text-slate-400' : ''}
+                        ${cap.status === 'TESTING' ? 'text-yellow-600' : ''}
+                        ${cap.status === 'DEPRECATED' ? 'text-slate-400' : ''}
                       `}>
-                        {cap.testStatus}
+                        {cap.status}
                       </div>
-                      {cap.lastTested && (
-                        <div className="text-xs text-slate-400">
-                          Last tested: {new Date(cap.lastTested).toLocaleDateString()}
-                        </div>
-                      )}
+                      <div className="text-xs text-slate-400">
+                        Confidence: {cap.confidence}%
+                      </div>
                     </div>
                   </div>
                 ))}
